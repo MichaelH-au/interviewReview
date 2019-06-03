@@ -1,0 +1,30 @@
+MYISAM
+
+default db engine before MySQL5.5
+system table
+two part of files .MYD .MYI
+.frm file record the structure of the table
+
+========characters========
+1. lock the whole table(read lock and write lock)
+2. check table tableName and repair table tableName
+3. compression if there is no write operation for the table
+(after compression the table will become read only)
+
+create table myIsam(id int, c1 varchar(20))engine=myisam;
+=> myIsam.frm    myIsam.MYD(data info) myIsam.MYI(index info)
+
+check table myIsam => msg OK
+repair table myIsam => msg OK
+
+myisampack -b -f myIsam.MTI => myIsam.OLD(backup file)
+
+========characters========
+the default maximum size of myisam engine is 4G(<MySQL5.0)
+(need to change MAX_Rows and AVG_ROW_LENGTH)
+the default maximum size of myisam engine is 256TB(>MySQL5.0)
+
+========situation========
+1. no transaction
+2. good for read only
+3. geo type data
