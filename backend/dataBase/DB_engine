@@ -28,3 +28,20 @@ the default maximum size of myisam engine is 256TB(>MySQL5.0)
 1. no transaction
 2. good for read only
 3. geo type data
+
+
+----------------------------------------------------
+Innodb
+.frm .idb
+It is better to use each file per table.
+========characters========
+1. Transaction ACID
+redo log, undo log
+2. lock a row
+write lock of a table: lock table tableName write;
+
+
+MySQL config file
+mysqld --help --verbose | grep -A 1 'Default options'
+set global test = ;
+set [session] test = ;
