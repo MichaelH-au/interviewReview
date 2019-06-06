@@ -1,7 +1,8 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
-    entry: './JavascriptBase/src/index.js',
+    // entry: './JavascriptBase/src/index.js',
+    entry: './JavascriptBase/model/decoratorModel.js',
     output: {
         path: __dirname,
         filename: './release/bundle.js'

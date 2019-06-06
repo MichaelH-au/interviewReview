@@ -3,7 +3,7 @@
  *  Do not change the original functionalities
  */
 
-import {readonly} from 'core-decorators'
+import {readonly, deprecate} from 'core-decorators'
 
 class Circle {
     draw() {
@@ -40,7 +40,7 @@ dec.draw()
 // function readOnly(target, name, descriptor) {
 //     descriptor.writable = false;
 //     return descriptor
-}
+// }
 
 class Person {
     constructor() {
@@ -52,8 +52,14 @@ class Person {
     name() {
         return `${this.first} ${this.last}`
     }
+    @deprecate('This function no longer use')
+    oldName() {
+        return 'not use no longer'
+    }
 
 }
 
 let p = new Person()
 console.log(p.name())
+console.log(p.oldName())
+// p.name = 'stes'
