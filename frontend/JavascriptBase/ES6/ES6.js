@@ -61,9 +61,48 @@ console.log('two', a1.exec(s), a2.exec(s)) // a2 will be null
  * Number.MAX_VALUE Number_MIN_VALUE
  */
 
-// arrow function
+/**
+ * Array
+ * Array.of()   Array.from([], function(){})  Array.fill(value, from, to)
+ * Array.keys()  Array.values() Array.entries() Array.copyWithin()
+ * Array.includes() Array.find() Array.find(function(){}) Array.findIndex(function(){})
+ *
+ */
 
-// Set Map
+
+/**
+ * Function
+ * () => {}
+ * default value
+ */
+
+/**
+ * Object
+ * {name}
+ * {func(){}}
+ * Object.is(obj1, obj2) <=> '==='
+ * Object.assign() shadow copy
+ *
+ */
+
+/**
+ * Symbol
+ * Symbol Symbol.for()
+ * Object.getOwnPropertySymbols(obj)
+ * Reflect.ownKeys(obj)
+ */
+
+/**
+ * Set
+ * set.add()  set.has() set.delete() set.clear() set.keys() set.values()
+ * WeakSet
+ * only reference
+ *
+ * Map  map.set(key, value)
+ * new Map([[], []])
+ */
+
+// Proxy Reflect
 
 // async fun
 

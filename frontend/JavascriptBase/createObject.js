@@ -27,6 +27,12 @@ let new1 = function () {
     let func = Array.prototype.shift.call(arguments)
     let object = Object.create(func.prototype)
     console.log(arguments.constructor)
+    console.log(Array.from(arguments))
+    let test = Array.from(arguments, function (item) {
+        return item.repeat(2)
+    })
+    console.log(test.constructor)
+    console.log(test)
     let result = func.apply(object, arguments)
     if (typeof result == "object") {
         return result
