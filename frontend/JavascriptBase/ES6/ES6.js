@@ -103,6 +103,98 @@ console.log('two', a1.exec(s), a2.exec(s)) // a2 will be null
  */
 
 // Proxy Reflect
+/**
+ * Proxy Reflect
+ */
+{
+    let obj = {
+        time: '2019',
+        name: 'alice',
+        _r: 123
+    }
+
+    let monitor = new Proxy(obj, {
+        get(target, key) {
+            return target[key].replace('2019', '2020')
+        },
+        set(target, key, value) {
+            if (key === 'name') {
+                return target[key] = value
+            }
+            return target[key]
+        },
+        has(target, key) {
+            if (key === 'name') {
+                return target[key]
+            }
+            return false
+        },
+        deleteProperty(target, key) {
+            if (key.indexOf('_') > -1) {
+                return true
+            }
+            return target[key]
+        },
+        ownKeys(target) {
+            return Object.keys(target).filter(item => item != 'time')
+        }
+    })
+    monitor.time
+
+}
+
+/**
+ * Class
+ * get set  static
+ */
+
+/**
+ * Promise
+ */
+
+/**
+ * Iterator
+ */
+
+/**
+ * Generator
+ *
+ */
+{
+    let test = function* () {
+        yield 'a';
+        yield 'b';
+        return 'c'
+    }
+    let result = test()
+    console.log(result.next()) // {value: "a", done: false}
+}
+
+{
+    let obj = {}
+    obj[Symbol.iterator] = function* () {
+        yield 1;
+        yield 2;
+        yield 3;
+    }
+
+    let state = function* () {
+        while (1) {
+            yield 'A'
+            yield 'B'
+            yield 'C'
+        }
+    }
+    // async is a type of generator
+    let state1 = async function f() {
+        while (1) {
+            await 'A'
+            await 'B'
+            await 'C'
+        }
+    }
+}
+
 
 // async fun
 
