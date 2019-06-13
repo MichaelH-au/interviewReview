@@ -45,3 +45,9 @@ MySQL config file
 mysqld --help --verbose | grep -A 1 'Default options'
 set global test = ;
 set [session] test = ;
+
+delete the previous binlogs
+expire_logs_days
+
+the maximum number of tables can be join in mysql is 61
+foreign key should not be implement in database lever to improve the performance

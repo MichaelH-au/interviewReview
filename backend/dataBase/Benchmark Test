@@ -1,0 +1,8 @@
+/**
+ * A type of pressure test
+ * Base on TPS, QPS, response time, the number of request
+ */
+
+/**
+ * Steps of benchmark
+ */
