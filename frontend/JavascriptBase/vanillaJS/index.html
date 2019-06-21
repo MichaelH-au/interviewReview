@@ -3,15 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="index.js" defer></script>
-    <script src="./utils/jQuery.js" defer></script>
-    <script src="./components/Components.js" defer></script>
+    <script src="./utils/jQuery.js"></script>
+    <script src="index.js"></script>
+    <script src="./components/Components.js"></script>
     <script src="test.js" defer></script>
-    <script src="./components/button.js" defer></script>
+    <script src="./components/button.js"></script>
 </head>
 <body>
 <div class='wrapper'>
 
 </div>
+<h1 id="title">Hello</h1>
+<input type="text" id="a" />
+<script>
+    const wrapper = $('.wrapper')
+    createButton(wrapper)
+
+    let input = document.getElementById("a"),
+        title = document.getElementById("title");
+    input.oninput = function (e) {
+        title.innerHTML = this.value;
+    };
+    Object.defineProperty(input, 'val', {
+        get: function () {
+            return this.value;
+        },
+        set: function (val) {
+            this.value = val;
+            title.innerHTML = val;
+        }
+    });
+</script>
 </body>
 </html>

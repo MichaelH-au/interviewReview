@@ -26,9 +26,10 @@ class LikeButton extends Component{
     }
 }
 
-const wrapper = $('.wrapper')
 const likeButton = new LikeButton()
-mount(wrapper, new LikeButton({ word: 'hello' }))
+const createButton = function(wrapper,state = {word: 'hello' }){
+    mount(wrapper, new LikeButton(state))
+}
 //
 // wrapper.appendChild(likeButton.render())
 //
