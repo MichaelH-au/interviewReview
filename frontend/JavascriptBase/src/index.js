@@ -3,7 +3,6 @@ class Person {
     constructor(name) {
         this.name = name
     }
-
 }
 
 let p = new Person('tes123t')
