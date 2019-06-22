@@ -10,15 +10,21 @@
     <script src="./components/button.js"></script>
 </head>
 <body>
+<script>
+</script>
 <div class='wrapper'>
 
 </div>
-<h1 id="title">Hello</h1>
-<input type="text" id="a" />
 <script>
     const wrapper = $('.wrapper')
     createButton(wrapper)
+</script>
+<h1 id="title">Hello</h1>
 
+<input type="text" id="a" />
+
+
+<script>
     let input = document.getElementById("a"),
         title = document.getElementById("title");
     input.oninput = function (e) {
@@ -33,6 +39,23 @@
             title.innerHTML = val;
         }
     });
+    let h1 = document.createElement('h1')
+    h1.innerText = '123'
+    console.log(h1)
+    $('body').appendChild(h1)
+</script>
+
+
+<div class="test1">
+    <div class="test2">123</div>
+</div>
+<script>
+    document.querySelector('.test1').addEventListener('click',function () {
+        console.log(1)
+    })
+    document.querySelector('.test2').addEventListener('click',function () {
+        console.log(2)
+    })
 </script>
 </body>
 </html>

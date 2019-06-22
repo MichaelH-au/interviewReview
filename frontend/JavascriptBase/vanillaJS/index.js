@@ -7,7 +7,8 @@ const createDOMFromString = (domString) => {
 const mount = (wrapper, component) => {
     wrapper.appendChild(component.renderDOM())
     component.onStateChange = (oldEl, newEl) => {
-        wrapper.insertBefore(newEl, oldEl)
-        wrapper.removeChild(oldEl)
+        wrapper.replaceChild(newEl, oldEl)
+        // wrapper.insertBefore(newEl, oldEl)
+        // wrapper.removeChild(oldEl)
     }
-}
+} 
