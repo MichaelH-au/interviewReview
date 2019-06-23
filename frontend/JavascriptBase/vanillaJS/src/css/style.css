@@ -1,0 +1,23 @@
+.container{
+    display: flex;
+    background-color: lightblue;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.container>div{
+    background-color: green;
+    height: 20px;
+}
+
+.middle{
+    width: 340px;
+    height: 540px;
+    background-color: red;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    /*transform: translate(-50%,-50%);*/
+    margin: -270px 0 -200px 0;
+}
