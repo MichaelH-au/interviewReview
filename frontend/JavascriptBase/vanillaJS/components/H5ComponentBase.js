@@ -10,5 +10,8 @@ let H5ComponentBase = function (name, cfg = {}) {
             ndContainer.style[entry[0]] = entry[1]
         }
     }
+    if (cfg.className) {
+        ndContainer.className = cfg.className
+    }
     return ndContainer
 }
