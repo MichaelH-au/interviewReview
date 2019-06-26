@@ -14,3 +14,11 @@
  * both sleep and wait will stop the current thread
  * but wait need notify/notifyAll to get the CPU back
  */
+
+/**
+ * Thread safety
+ * 1. synchronized key word
+ * public synchronized void methodA(){}
+ * ReentrantLock lock=new ReentrantLock();
+ * lock.lock()   lock.unlock()
+ */
