@@ -28,3 +28,14 @@ echo 123aaa456bbb | egrep -v 'aaa'
 sort
 uniq -c
 sort -n
+
+if test $# = 1
+then
+    start=1
+    finish=$1
+elif test $# = 2
+then
+    start=$1
+    finish=$2
+else
+    echo "Usage: $0 <start> <finish>" 1>&2
