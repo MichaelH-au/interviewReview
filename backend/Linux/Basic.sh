@@ -18,7 +18,7 @@ echo "$@"
 echo "$2"
 
 
-sed 's/\w/b/g' test
+sed 's/\w/b/g' test.sh
 
 tr A-Z a-z
 
@@ -29,29 +29,44 @@ sort
 uniq -c
 sort -n
 
-if test $# = 1
+if test.sh $# = 1
 then
     start=1
     finish=$1
-elif test $# = 2
+elif test.sh $# = 2
 then
     start=$1
     finish=$2
 else
     echo "Usage: $0 <start> <finish>" 1>&2
-    
+
 
 for filename in "$@"
 do
     new_filename=`echo "$filename" | tr A-Z a-z`
-    test "$filename" = "$new_filename" && continue
-    if test -r "$new_filename"
+    test.sh "$filename" = "$new_filename" && continue
+    if test.sh -r "$new_filename"
     then
         echo "$0: $new_filename exists" 1>&2
-    elif test -e "$filename"
+    elif test.sh -e "$filename"
     then
         mv -- "$filename" "$new_filename"
     else
         echo "$0: $filename not found" 1>&2
+    fi
+done
+
+for file in *
+do
+    line=`wc -l $file | cut -d' ' -f1`
+#    echo $file $line
+    if [ $line -lt 10 ]
+    then
+        small=`echo $small $file`
+    elif [ $line -lt 100 ]
+    then
+        mid=`echo $mid $file`
+    else
+        large=`echo $large $file`
     fi
 done

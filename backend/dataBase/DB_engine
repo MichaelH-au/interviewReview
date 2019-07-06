@@ -43,8 +43,8 @@ write lock of a table: lock table tableName write;
 
 MySQL config file
 mysqld --help --verbose | grep -A 1 'Default options'
-set global test = ;
-set [session] test = ;
+set global test.sh = ;
+set [session] test.sh = ;
 
 delete the previous binlogs
 expire_logs_days
