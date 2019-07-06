@@ -39,6 +39,7 @@ then
     finish=$2
 else
     echo "Usage: $0 <start> <finish>" 1>&2
+fi
 
 
 for filename in "$@"
@@ -70,3 +71,5 @@ do
         large=`echo $large $file`
     fi
 done
+
+tail -n +10 test | head -n 1

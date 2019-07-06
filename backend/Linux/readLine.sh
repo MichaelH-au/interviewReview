@@ -1,11 +1,10 @@
 #!/bin/sh
-n=0
-for line in `cat test`
+n=1
+while read line
 do
-    if [ $n -eq 10 ]
+    if [[ $n > 1 ]]
     then
         echo "$line"
     fi
-        echo "$line"
     n=$[$n + 1]
-done
+done < test
