@@ -23,4 +23,5 @@
  * is null, is not null
  * SELECT * FROM cinema WHERE description != "boring" AND MOD(id, 2) = 1 ORDER BY rating DESC;
  * UPDATE salary SET sex = (CASE WHEN sex='m' THEN 'f' WHEN sex='f' THEN 'm' END)
+ * show index from tablename;
  */
