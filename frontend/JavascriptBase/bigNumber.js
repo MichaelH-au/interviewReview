@@ -23,21 +23,44 @@ const bigDivide = (str1, str2) => {
  * @param str2
  * @returns {string}
  */
-const bigAdd = (str1, str2) => {
-    let overflow = 0
-    let maxLength = Math.max(str1.length, str2.length)
-    let result = []
-    for (let i = 0; i < maxLength; i++) {
-        let number1, number2
-        number1 = i <= str1.length - 1 ? parseInt(str1.charAt(str1.length - i - 1)) : 0
-        number2 = i <= str2.length - 1 ? parseInt(str2.charAt(str2.length - i - 1)) : 0
-        let suffix = (number1 + number2 + overflow) % 10
-        result.push(suffix)
-        overflow = (number1 + number2) > 10 ? 1 : 0
-    }
+function add(a,b){
+    var str1,str2,temp;
+    var addFlag = 0;
+    var max = [],min = [],res = [];
+    str1 = a.split("").reverse();//分割字符串，并且反转
+    str2 = b.split("").reverse();
 
-    return result.reverse().join('')
+    if (parseInt(a) >= parseInt(b)) {
+        max = str1;
+        min = str2;
+    }
+    else{
+        max = str2;
+        min = str1;
+    }
+    for (var i = 0; i <= max.length - 1; i++) {
+        if (i <= min.length - 1) {
+            temp = parseInt(max[i]) + parseInt(min[i]) + addFlag;
+        }
+        else{
+            temp = parseInt(max[i]) + addFlag;
+        }
+
+        if (temp > 9) {
+            res[i] = temp - 10;
+            addFlag = 1;
+            if (i == max.length - 1) {
+                res[max.length] = 1;//如果是最后一位，要进位
+            }
+        }
+        else{
+            res.push(temp);
+            addFlag = 0;
+        }
+    };
+    return res.reverse().join("");
 }
+console.log(add("19","21"))
 
 /**
  * 字符大数减法

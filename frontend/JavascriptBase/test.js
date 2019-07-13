@@ -15,7 +15,6 @@ let sum = arrsDiff.reduce((accu, curr, i) => {
 console.log(sum / 8)
 //
 
-
 // function markdownParser (markdown) {
 //     markdown = markdown.trim()
 //     return markdown.replace(/(#+) (.+)/g, function(...args){
