@@ -16,3 +16,12 @@ function removeDash(str) {
 }
 
 console.log(removeDash("aa-bb-cc"))
+
+function twoDimArr(res) {
+    let ans={}
+    res.forEach(item=>{
+        item.sort((a,b)=>a-b);
+        ans[item]=item;
+    });
+    return Object.values(ans)
+}
