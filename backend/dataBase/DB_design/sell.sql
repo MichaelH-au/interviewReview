@@ -2,7 +2,7 @@ create table `products_info` (
     `product_id` varchar(32) not null,
     `product_name` varchar(64) not null comment 'product name',
     `product_price` decimal(8, 2) not null comment 'price',
-    `product_stock` int not null comment 'stock',
+    `product_stock` bigint not null comment 'stock',
     `product_description` varchar(64) comment 'descriptions',
     `product_icon` varchar(512) comment 'url link',
     `product_type` int not null comment 'number of type',
